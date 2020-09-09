@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Who do you want to chat with ?</h1>
+{% for followobj in to_chat_users %}
+    {% if followobj.to_follow.username != request.user.username%}
+
+
+    <a href = '{% url 'room' followobj.to_follow.username %}'>{{ followobj.to_follow.username }}</a><br><br>
+    {% endif %}
+{% endfor %}
+</body>
+</html>
